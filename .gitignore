@@ -1,0 +1,7 @@
+DATA/*
+TEMP/*
+dim-deg-count-table-generic-case/*
+scatter-plot-generic-case/*
+scatter-plot-non-generic-case/*
+*.pyc
+.DS_Store

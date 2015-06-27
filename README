@@ -1,0 +1,81 @@
+All programme and data files are put in the quiver/ folder.
+
+------------------------------------------------------
+
+File Structure:
+
+quiver/ --|
+          |-- Quiver.m
+          |-- Present.nb        # presents data in readable form
+          |-- share.py          # includes shared functions
+          |-- quiver_gen.py     # generates quiver data
+          |-- data_gen.py       # generates superpotential data
+          |-- M2Script.py       # launches M2 to do calculations
+          |-- present_gen.py    # generates data for presenting in "present.nb"
+          |-- README            # the file you are reading now
+          |
+          |-- DATA/ --|         # all data files
+                      |-- n=?/ --|
+                                 |-- e=?/ --|
+                                            |-- quiver.txt    # all quivers
+                                            |-- count.txt     # the number of quivers
+                                            |-- output.txt    # intermediate output when generating quivers. not for final use.
+                                            |
+                                            |-- db/ --|       # database for generating greater e. not for final use
+                                            |         |-- database files
+                                            |
+                                            |-- term/ --|
+                                            |           |-- term files
+                                            |
+                                            |-- gio/ --|
+                                            |          |-- GIO files
+                                            |
+                                            |-- spot/ --|
+                                            |           |-- superpotential files
+                                            |
+                                            |-- M2In/ --|
+                                            |           |-- M2 input files
+                                            |
+                                            |-- M2Out/ --|
+                                            |            |-- M2 output files
+                                            |
+                                            |-- present/ --|
+                                                           |-- data files for final presenting
+
+------------------------------------------------------
+
+How to Use Mathematica:
+
+1. Quivers.m is a package file which defines all private and public functions
+
+2. Create a notebook file and use following commands to import the package:
+	SetDirectory[ NotebookDirectory[] ];
+	<< Quiver`；
+
+3. Now you can use functions defined in the package. Use following command to
+   find available public functions and variables:
+	Names["Quiver`*"]
+   use ? to find help for some particular function:
+	？PresentData
+
+4. Refer to the "present.nb" files for examples
+
+------------------------------------------------------
+
+About python - Howto:
+
+1. Generate quivers:
+	python ./quiver_gen.py n e
+
+2. Generate data:
+	python ./data_gen.py n e
+
+3. use M2:
+	python ./M2Script.py n e
+
+4. Generate presenting data:
+	python ./present_gen.py n e
+
+5. now you are ready to use Mathematica to present data
+
+------------------------------------------------------
